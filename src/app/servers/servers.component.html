@@ -1,0 +1,22 @@
+<label> Server Name</label>
+
+<input type="text" class="form-control" (input) = "onUpdateServerName($event)" >
+<br>
+<!-- For Two way data binding have to use below one -->
+<input type="text" class="form-control" [(ngModel)] = "serverName" >
+<br>
+
+<input type="text" class="form-control" [(ngModel)] = "userName" (input) = "enableUserName()" >
+<!-- <p>{{ serverName }}</p> -->
+<br>
+<button class="btn btn-primary" [disabled] = "!allowbutton" (click) = "onClickServer()"> add server</button>
+<br>
+
+<button class="btn-primary" [disabled] = "!enableUserNameButton" (click) = "onClickUserNameButton()"> Enable userName</button>
+<!--<p [innerText] = "!allowbutton">  </p> -->
+<p>{{ serverCreationStatus }}</p>
+
+<p>{{ userName }}</p>
+
+<app-server></app-server>
+<app-server></app-server>
